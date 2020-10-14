@@ -34,7 +34,7 @@ function validLastName ()
 
 function validEmailId ()
 {
-   echo "Enter your Last Name "
+   echo "Enter your Email Id "
    read  emailId
 
    pattern="[A-Za-z0-9]+@[A-Za-z]+\.[a-z]{2}[\.][a-z]{2}$"
@@ -49,7 +49,7 @@ function validEmailId ()
 
 function validMobileFormat ()
 {
-   echo "Enter your Last Name "
+   echo "Enter your Mobile No "
    read  mobileNo
 
    pattern="(91){1} ?[98765]{1}[0-9]{9}$"
@@ -62,6 +62,21 @@ function validMobileFormat ()
    fi
 }
 
+function validPassword ()
+{
+   echo "Enter your Password "
+   read  password
+
+   pattern="[a-zA-z]{8,32}$"
+
+   if [[ $password =~ $pattern ]]
+   then
+       echo "Password is Valid"
+   else
+       echo "Password is Invalid"
+   fi
+}
+
 function main ()
 {
 
@@ -69,5 +84,6 @@ function main ()
    validLastName
    validEmailId
    validMobileFormat
+   validPassword
 }
 main
