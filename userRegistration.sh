@@ -32,10 +32,26 @@ function validLastName ()
    fi
 }
 
+function validEmailId ()
+{
+   echo "Enter your Last Name "
+   read  emailId
+
+   pattern="[A-Za-z0-9]+@[A-Za-z]+\.[a-z]{2}[\.][a-z]{2}$"
+
+   if [[ $emailId =~ $pattern ]]
+   then
+       echo "Email ID is Valid"
+   else
+       echo "Email ID is Invalid"
+   fi
+}
+
 function main ()
 {
 
    validFirstName
    validLastName
+   validEmailId
 }
 main
