@@ -77,6 +77,22 @@ function validPassword ()
    fi
 }
 
+function validSampleEmail()
+{
+   echo "Enter your email "
+   read  email
+
+   pattern="^(([A-Za-z0-9]+((\.|\-|\_|\+)?[A-Za-z0-9]?)*[A-Za-z0-9]+)|[A-Za-z0-9]+)@(([A-Za-z0-9]+)+((\.|\-|\_)?([A-Za-z0-9]+)+)*)+\.([A-Za-z]{2,})+$"
+
+   if [[ $email =~ $pattern ]]
+   then
+       echo "email is Valid"
+   else
+       echo "email is Invalid"
+   fi
+}
+
+
 function main ()
 {
 
@@ -85,5 +101,7 @@ function main ()
    validEmailId
    validMobileFormat
    validPassword
+   validSampleEmail
 }
+
 main
