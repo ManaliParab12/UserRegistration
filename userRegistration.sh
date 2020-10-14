@@ -36,8 +36,7 @@ function validEmailId ()
 {
    echo "Enter your Email Id "
    read  emailId
-
-   pattern="[A-Za-z0-9]+@[A-Za-z]+\.[a-z]{2}[\.][a-z]{2}$"
+   pattern="[a-zA-z]+\.([A-Za-z0-9]*)+@[A-Za-z]+\.(([a-z]{2})*)\.(([a-z]{2})*)$"
 
    if [[ $emailId =~ $pattern ]]
    then
@@ -67,7 +66,7 @@ function validPassword ()
    echo "Enter your Password "
    read  password
 
-   pattern="(?=.*[A-Z])[a-zA-Z]{8,32}$"
+   pattern="(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,32}$"
 
    if [[ $password =~ $pattern ]]
    then
