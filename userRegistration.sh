@@ -47,11 +47,27 @@ function validEmailId ()
    fi
 }
 
+function validMobileFormat ()
+{
+   echo "Enter your Last Name "
+   read  mobileNo
+
+   pattern="(91){1} ?[98765]{1}[0-9]{9}$"
+
+   if [[ $mobileNo =~ $pattern ]]
+   then
+       echo "Mobile Number is Valid"
+   else
+       echo "Mobile Number is Invalid"
+   fi
+}
+
 function main ()
 {
 
    validFirstName
    validLastName
    validEmailId
+   validMobileFormat
 }
 main
