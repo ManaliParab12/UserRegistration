@@ -67,7 +67,7 @@ function validPassword ()
    echo "Enter your Password "
    read  password
 
-   pattern="[a-zA-z]{8,32}$"
+   pattern="(?=.*[A-Z])[a-zA-Z]{8,32}$"
 
    if [[ $password =~ $pattern ]]
    then
