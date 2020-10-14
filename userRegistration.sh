@@ -17,4 +17,25 @@ function validFirstName ()
    fi
 }
 
-validFirstName
+function validLastName ()
+{
+   echo "Enter your Last Name "
+   read  lName
+
+   pattern="^[A-Z]{1}[a-z]{2,10}$"
+
+   if [[ $lName =~ $pattern ]]
+   then
+       echo "Last Name is Valid"
+   else
+       echo "Last Name is Invalid"
+   fi
+}
+
+function main ()
+{
+
+   validFirstName
+   validLastName
+}
+main
