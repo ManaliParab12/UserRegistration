@@ -7,7 +7,7 @@ function validFirstName ()
    echo "Enter your First Name "
    read  fName
 
-   pattern="^[A-Z]{1}[a-z]{2,10}$"
+   pattern="^[A-Z]{1}[a-z]{2}$"
 
    if [[ $fName =~ $pattern ]]
    then
@@ -22,7 +22,7 @@ function validLastName ()
    echo "Enter your Last Name "
    read  lName
 
-   pattern="^[A-Z]{1}[a-z]{2,10}$"
+   pattern="^[A-Z]{1}[a-z]{2}$"
 
    if [[ $lName =~ $pattern ]]
    then
@@ -66,9 +66,7 @@ function validPassword ()
 {
    echo "Enter your Password "
    read  password
-
-   pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!?#$]{1})[a-zA-Z0-9!?#$]{8,32}$"
-
+   pattern="^([A-Z]+)([0-9]+)[@#$%^&*]{1}[0-9a-zA-Z\@\#$\%\^\&\*]{5,20}$"
    if [[ $password =~ $pattern ]]
    then
        echo "Password is Valid"
